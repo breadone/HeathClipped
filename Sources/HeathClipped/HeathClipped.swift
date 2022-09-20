@@ -29,3 +29,15 @@ public func getHeathCliff(for date: Date = Date()) throws -> String {
             
     return imageURL
 }
+
+/// Gets the url for the heathcliff comic for the specified date
+/// - Parameter date: Date to get the comic (defaults to today)
+public func getHeathCliff(for date: Date = Date()) throws -> URL {
+    let string: String = try getHeathCliff(for: date)
+    
+    if let url = URL(string: string) {
+        return url
+    } else {
+        throw URLError(.badURL)
+    }
+}
