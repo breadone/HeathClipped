@@ -3,6 +3,6 @@ import XCTest
 
 final class HeathClippedTests: XCTestCase {
     func testDateSplitting() throws {
-        getHeathCliff()
+        print(try getHeathCliff())
     }
 }

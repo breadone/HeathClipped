@@ -2,7 +2,9 @@ import Foundation
 
 /// Gets the url for the heathcliff comic for the specified date
 /// - Parameter date: Date to get the comic (defaults to today)
-func getHeathCliff(for date: Date = Date()) {
+public func getHeathCliff(for date: Date = Date()) throws -> String {
+    let imageURL: String = "lol"
+    
     // split the date into ymd
     let stringDate = date.formatted(.iso8601).split(separator: "-")
     let year: String = String(stringDate[0])
@@ -10,15 +12,17 @@ func getHeathCliff(for date: Date = Date()) {
     let day: String = String(stringDate[2].dropLast(10))
     
     // fetch the comic data
-    let comicURL = URL(string: "https://www.gocomics.com/heathcliff/\(year)/\(month)/\(day)")!
-    let html: String
-    
-    do {
-        html = try String(contentsOf: comicURL)
-    } catch {
-        fatalError("Failed to parse URL: \(error.localizedDescription)")
+    guard let comicURL = URL(string: "https://www.gocomics.com/heathcliff/\(year)/\(month)/\(day)") else {
+        throw URLError(.badURL)
     }
     
-    print(html)
+    let html = try String(contentsOf: comicURL)
     
+    guard html.contains("data-image") else {
+        throw URLError(.unknown)
+    }
+    
+    
+            
+    return imageURL
 }
