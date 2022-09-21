@@ -31,7 +31,7 @@ public func getHeathCliff(for date: Date = Date()) throws -> String {
     return imageURL
 }
 
-func getHeathCliff(year: String, month: String, day: String) throws -> String {
+public func getHeathCliff(year: String, month: String, day: String) throws -> String {
     let imageURL: String
     
     // fetch the comic data
