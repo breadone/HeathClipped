@@ -6,7 +6,7 @@ public func getHeathCliff(for date: Date = Date()) throws -> String {
     var imageURL: String
     
     // split the date into ymd
-    let stringDate = date.formatted(.iso8601).split(separator: "-")
+    let stringDate = date.ISO8601Format().split(separator: "-")
     let year: String = String(stringDate[0])
     let month: String = String(stringDate[1])
     let day: String = String(stringDate[2].dropLast(10))
