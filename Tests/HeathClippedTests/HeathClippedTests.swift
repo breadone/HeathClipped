@@ -2,7 +2,11 @@ import XCTest
 @testable import HeathClipped
 
 final class HeathClippedTests: XCTestCase {
-    func testDateSplitting() throws {
-        print(try getHeathCliff())
+    func testYea() throws {
+        print(try getHeathCliff(year: "2022", month: "09", day: "20"))
+    }
+    
+    func testDate() {
+        print(Date())
     }
 }
