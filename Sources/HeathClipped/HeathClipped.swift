@@ -6,7 +6,7 @@ public func getHeathCliff(for date: Date = Date()) throws -> String {
     var imageURL: String
     
     // split the date into ymd
-    let stringDate = date.ISO8601Format().split(separator: "-")
+    let stringDate = date.iso8601().split(separator: "-")
     let year: String = String(stringDate[0])
     let month: String = String(stringDate[1])
     let day: String = String(stringDate[2].dropLast(10))
@@ -63,5 +63,12 @@ public func getHeathCliffURL(for date: Date = Date()) throws -> URL {
         return url
     } else {
         throw URLError(.badURL)
+    }
+}
+
+// i could not for the life of me tell you why this is needed but apparently .ISO8601Format just does not exist o k a y
+extension Date {
+    func iso8601() -> String {
+        return ISO8601DateFormatter().string(from: self)
     }
 }
