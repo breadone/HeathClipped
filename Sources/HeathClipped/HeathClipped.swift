@@ -1,5 +1,10 @@
 import Foundation
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
+@available(macOS 10.12, *)
 /// Gets the url for the heathcliff comic for the specified date
 /// - Parameter date: Date to get the comic (defaults to today)
 public func getHeathCliff(for date: Date = Date()) throws -> String {
@@ -54,6 +59,7 @@ public func getHeathCliff(year: String, month: String, day: String) throws -> St
     return imageURL
 }
 
+@available(macOS 10.12, *)
 /// Gets the url for the heathcliff comic for the specified date
 /// - Parameter date: Date to get the comic (defaults to today)
 public func getHeathCliffURL(for date: Date = Date()) throws -> URL {
@@ -66,6 +72,7 @@ public func getHeathCliffURL(for date: Date = Date()) throws -> URL {
     }
 }
 
+@available(macOS 10.12, *)
 // i could not for the life of me tell you why this is needed but apparently .ISO8601Format just does not exist o k a y
 extension Date {
     func iso8601() -> String {
