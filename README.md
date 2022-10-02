@@ -9,7 +9,7 @@ Made this cos i was quite bored and also the twitter account i usually get my he
 Basically, you can use/port this however you want, but crediting this project would be nice
 
 
-for an example of this, i've made [this monstrosity](https://heathclipped.herokuapp.com). (you can go to /today for latest or /<yyyy>/<mm>/<dd> for any comic in the past)
+for an example of this, i've made [this monstrosity](https://heathclipped.herokuapp.com). (you can go to /today for latest or /\<yyyy>/\<mm>/\<dd> for any comic in the past)
 
 
 HEATHCLIFF IS A COPYRIGHT OF CREATORS SYNDICATE, INC.
